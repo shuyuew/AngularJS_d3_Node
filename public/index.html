@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>test website</title>	
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+	<link href="style.css" rel="stylesheet"/>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="angular.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="trendingChart.js"></script>
+	<script type="text/javascript" src="lineChart.js"></script>
+	<script type="text/javascript" src="pieChart.js"></script>
+
+</head>
+<body ng-controller="contrl">
+	<div class="row">
+	<!-- nav bar -->
+	<div class="col-md-3">
+  	    	<h6>NRB Intelligence Analytics</h6>
+  	    </div>
+  	    <div class="col-md-3" >
+  	    	<input class="form-control" type="date"/>
+  	    </div>
+  	    <div class="col-md-2">
+  	    	<select class="form-control" id="sel1">
+				<option>1</option>
+				<option>2</option>
+			</select>
+  	    </div>
+  	    <div class="col-md-2">
+  	    	<select class="form-control" id="sel2">
+				<option>1</option>
+				<option>2</option>
+			</select>
+  	    </div>
+		<div class="col-md-2" >
+			<input class="btn" type="submit" value="Go" />
+		</div>
+
+		<div class="col-md-10" >
+			<h4 class="center"><strong>tickets trending</strong></h4>
+			<div id="trendingChart">
+		    	<trending-chart></trending-chart>
+		    </div>
+		</div>
+
+		<div class="col-md-2" >
+		<div class="popupTab">
+		    <div id="popup">
+		    	<div class="tab">
+			    	<p>NRB Tickets Predict Analystics</p>
+			    	
+			    	Name <input type="text" placeholder="Name" ng-model="name" /><br/><br/>
+			    	To <input type="text" placeholder="Seperated by comma" ng-model="receiver" /><br/><br/>
+			    	CC <input type="text" placeholder="Seperated by comma" ng-model="CC" />	<br/><br/>
+			    	BCC <input type="text" placeholder="Seperated by comma" ng-model="BCC" /><br/><br/>
+			    	<input type="datetime-local" name="date" placeholder="date" ng-model="date"/><br/><br/>
+			    	<input id="Subscribe" type="submit" class="btn btn-primary btn-lg" value="Subscribe" ng-click="emailSubscribe()" />
+		    	</div>
+		    </div>
+		</div>
+		</div>
+
+		<h4 class="col-md-12 center"><strong>Sort By Problem Type</strong></h4>
+		  <div class="col-md-12">
+		  	<div id="pieByProb">
+		    	<pie-chart ></pie-chart>
+		    </div>
+		  </div>
+		  <div class="col-md-12">
+		  	<div id="treeByProb">
+		    	<line-chart ></line-chart>
+		    </div>
+		  </div>
+		    
+		    
+</body>
+</html>
